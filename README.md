@@ -8,7 +8,7 @@ Here's the flow:
 Schneiken > stage2 
 
 Stage2 > vCNkCxcKEd > Dunihi RAT 
-       > Stage3
+       AND Stage3
 
 Stage3 > Ratty (JRAT) + Watcher.vbs + Master.vbs
 
